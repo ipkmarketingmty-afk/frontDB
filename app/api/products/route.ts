@@ -18,8 +18,6 @@ export async function GET(request: NextRequest) {
     
     const products = result.rows.map((row) => ({
       ...row,
-      price: Number(row.price),   // <-- FIX
-      stock: Number(row.stock),   // <-- FIX
       image: row.image ? `data:image/jpeg;base64,${row.image.toString('base64')}` : null,
     }))
     
